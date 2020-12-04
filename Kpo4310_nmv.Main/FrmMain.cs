@@ -36,8 +36,9 @@ namespace Kpo4310_nmv.Main
         private void mnOpen_Click(object sender, EventArgs e)
         {
             try {
-                throw new NotImplementedException();
-                throw new Exception("Неправильные входные параметры");
+                var mock = new MockBusListCommand();
+                mock.Execute();
+                dgvBuses.DataSource = mock.busesList;
                     }
             catch (NotImplementedException ex)
             {

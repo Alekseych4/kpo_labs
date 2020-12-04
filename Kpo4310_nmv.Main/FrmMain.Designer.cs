@@ -33,7 +33,9 @@
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
+            this.dgvBuses = new System.Windows.Forms.DataGridView();
             this.MMenu.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuses)).BeginInit();
             this.SuspendLayout();
             // 
             // MMenu
@@ -80,11 +82,20 @@
             this.SStatus.TabIndex = 1;
             this.SStatus.Text = "statusStrip1";
             // 
+            // dgvBuses
+            // 
+            this.dgvBuses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvBuses.Location = new System.Drawing.Point(12, 36);
+            this.dgvBuses.Name = "dgvBuses";
+            this.dgvBuses.Size = new System.Drawing.Size(776, 175);
+            this.dgvBuses.TabIndex = 2;
+            // 
             // FrmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dgvBuses);
             this.Controls.Add(this.SStatus);
             this.Controls.Add(this.MMenu);
             this.MainMenuStrip = this.MMenu;
@@ -93,6 +104,7 @@
             this.Load += new System.EventHandler(this.FrmMain_Load);
             this.MMenu.ResumeLayout(false);
             this.MMenu.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvBuses)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -105,6 +117,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnExit;
         private System.Windows.Forms.ToolStripMenuItem mnOpen;
         private System.Windows.Forms.StatusStrip SStatus;
+        private System.Windows.Forms.DataGridView dgvBuses;
     }
 }
 
