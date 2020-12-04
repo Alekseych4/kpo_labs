@@ -32,6 +32,8 @@
             this.mmMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
+            this.mmBuses = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnOpenBuses = new System.Windows.Forms.ToolStripMenuItem();
             this.SStatus = new System.Windows.Forms.StatusStrip();
             this.dgvBuses = new System.Windows.Forms.DataGridView();
             this.MMenu.SuspendLayout();
@@ -41,7 +43,8 @@
             // MMenu
             // 
             this.MMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mmMenu});
+            this.mmMenu,
+            this.mmBuses});
             this.MMenu.Location = new System.Drawing.Point(0, 0);
             this.MMenu.Name = "MMenu";
             this.MMenu.Size = new System.Drawing.Size(800, 24);
@@ -57,22 +60,37 @@
             this.mmMenu.Name = "mmMenu";
             this.mmMenu.Size = new System.Drawing.Size(48, 20);
             this.mmMenu.Text = "Файл";
-            this.mmMenu.Click += new System.EventHandler(this.mmMenu_Click);
+            this.mmMenu.Click += new System.EventHandler(this.mmBuses_Click);
             // 
             // mnExit
             // 
             this.mnExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(180, 22);
+            this.mnExit.Size = new System.Drawing.Size(121, 22);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(180, 22);
+            this.mnOpen.Size = new System.Drawing.Size(121, 22);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
+            // 
+            // mmBuses
+            // 
+            this.mmBuses.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnOpenBuses});
+            this.mmBuses.Name = "mmBuses";
+            this.mmBuses.Size = new System.Drawing.Size(73, 20);
+            this.mmBuses.Text = "Автобусы";
+            // 
+            // mnOpenBuses
+            // 
+            this.mnOpenBuses.Name = "mnOpenBuses";
+            this.mnOpenBuses.Size = new System.Drawing.Size(240, 22);
+            this.mnOpenBuses.Text = "Открыть данные об автобусах";
+            this.mnOpenBuses.Click += new System.EventHandler(this.mnOpenBuses_Click);
             // 
             // SStatus
             // 
@@ -118,6 +136,8 @@
         private System.Windows.Forms.ToolStripMenuItem mnOpen;
         private System.Windows.Forms.StatusStrip SStatus;
         private System.Windows.Forms.DataGridView dgvBuses;
+        private System.Windows.Forms.ToolStripMenuItem mmBuses;
+        private System.Windows.Forms.ToolStripMenuItem mnOpenBuses;
     }
 }
 

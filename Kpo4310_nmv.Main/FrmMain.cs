@@ -13,6 +13,8 @@ namespace Kpo4310_nmv.Main
 {
     public partial class FrmMain : Form
     {
+        private List<Bus> busesList = null;
+        private BindingSource bsBuses = new BindingSource();
         public FrmMain()
         {
             InitializeComponent();
@@ -38,7 +40,10 @@ namespace Kpo4310_nmv.Main
             try {
                 var mock = new MockBusListCommand();
                 mock.Execute();
-                dgvBuses.DataSource = mock.busesList;
+                busesList = mock.busesList;
+                Console.WriteLine(busesList);
+                bsBuses.DataSource = busesList;
+                dgvBuses.DataSource = bsBuses; 
                     }
             catch (NotImplementedException ex)
             {
@@ -51,9 +56,31 @@ namespace Kpo4310_nmv.Main
             }
         }
 
-        private void mmMenu_Click(object sender, EventArgs e)
+        private void mmBuses_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void mnOpenBuses_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var frmBuses = new FrmBuses();
+
+                Bus bus = (bsBuses.Current as Bus);
+                frmBuses.Bus = bus;
+
+                frmBuses.ShowDialog();
+            }
+            catch (NotImplementedException ex)
+            {
+                MessageBox.Show("Ошибка №1: " + ex.Message);
+                LogUtility.ErrorLog(ex.Message);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Ошибка №2: " + ex.Message);
+            }
         }
     }
 }

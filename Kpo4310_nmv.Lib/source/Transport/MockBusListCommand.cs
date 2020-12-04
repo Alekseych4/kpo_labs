@@ -10,13 +10,13 @@ namespace Kpo4310_nmv.Lib
     {
         public MockBusListCommand()
         {
-            this._busesList = null;
+            this._busesList = new List<Bus>();
         }
         private readonly string _dataFileName = "";
         private List<Bus> _busesList = null;
         public List<Bus> busesList
         {
-            get { return _busesList; }
+            get => _busesList;
         }
         public void Execute()
         {
