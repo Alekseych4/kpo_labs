@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Kpo4310_nmv.Lib;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,7 @@ namespace Kpo4310_nmv.Main
             catch (NotImplementedException ex)
             {
                 MessageBox.Show("Ошибка №1: " + ex.Message);
+                LogUtility.ErrorLog(ex.Message);
             }
             catch (Exception ex)
             {
